@@ -2,13 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "AudioKitIO",
+    name: "AudioKitWebsite",
     platforms: [
        .macOS(.v12)
     ],
     dependencies: [
         // 💧 Vapor
         .package(url: "https://github.com/vapor/vapor", from: "4.63.0"),
+        .package(url: "https://github.com/bdrelling/docgen-AudioKit", from: "0.1.0"),
     ],
     targets: [
         // 💧 Vapor

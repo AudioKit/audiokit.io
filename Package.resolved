@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "docgen-audiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bdrelling/docgen-AudioKit",
+      "state" : {
+        "revision" : "dd633c893846d313ca096710e4932655f5577734",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "multipart-kit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/multipart-kit.git",
@@ -165,7 +174,7 @@
     {
       "identity" : "vapor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vapor/vapor.git",
+      "location" : "https://github.com/vapor/vapor",
       "state" : {
         "revision" : "971becba16d6faf5c4cb869d2e3026e822d09059",
         "version" : "4.65.1"
