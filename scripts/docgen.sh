@@ -13,6 +13,9 @@ documentation_directory="${working_directory}/Public/documentation"
 # Define our temporary directory for cloning repositories, which ensures proper cleanup.
 temp_directory="${working_directory}/temp"
 
+# If our command failed previously, we may need to delete the temporary directory.
+rm -rf $temp_directory
+
 # Create the temporary directory if it does not already exist, then step into it.
 mkdir $temp_directory
 cd $temp_directory
