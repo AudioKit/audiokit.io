@@ -22,7 +22,7 @@ cd AudioKitDocs
 
 # Define our documentation directory.
 # This corresponds to Vapor's public file directory.
-documentation_directory="${working_directory}/Public/documentation"
+documentation_directory="${working_directory}/Public/docs"
 
 # Delete our documentation directory and recreate it.
 # This ensure stale documentation won't carry-over, such as in the event of an error.
