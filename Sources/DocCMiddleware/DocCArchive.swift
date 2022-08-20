@@ -9,6 +9,9 @@ public struct DocCArchive {
     /// (eg. The name of `MyPackage.doccarchive` would be `"MyPackage"`.
     let archiveName: String
     
+    /// The path to the `.doccarchive` on disk, relative to the `documentationDirectory` set when initializing a `DocCMiddleware`.
+    let archivePath: String
+    
     /// The base path for the archive. This is a relative path to your website, which is where your `.doccarchive` expects to serve files from.
     /// This is set via the `--hosting-base-path` option when generating a `.doccarchive`.
     ///
@@ -18,17 +21,14 @@ public struct DocCArchive {
     
     /// Whether or not the archive is static.
     /// This is set via the `--transform-for-static-hosting` option when generating a `.doccarchive`.
-    ///
-    /// **NOTE: This is currently not configurable, but the property will remain to ensure I remember to implement it at some point.**
-    let isStatic: Bool = false
+    let isStatic: Bool
     
-    /// The path to the `.doccarchive` on disk, relative to the `documentationDirectory` set when initializing a `DocCMiddleware`.
-    let archivePath: String
-    
-    public init(name: String, directory: String = "", hostingBasePath: String? = nil) {
+    #warning("isStatic isn't working properly.")
+    public init(name: String, directory: String = "", hostingBasePath: String? = nil, isStatic: Bool = false) {
         self.archiveName = name
         self.archiveDirectory = directory
         self.hostingBasePath = hostingBasePath ?? name
+        self.isStatic = isStatic
         
         let filename = "\(self.archiveName).doccarchive"
         

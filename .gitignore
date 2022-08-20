@@ -14,5 +14,6 @@ db.sqlite
 temp
 
 # We generate our DocC documentation on deploy with docgen.
-# As such, ensure this folder never gets checked in -- the archives are huge.
+# As such, ensure these folders never gets checked in -- the archives are huge.
+Public/docs
 Public/documentation

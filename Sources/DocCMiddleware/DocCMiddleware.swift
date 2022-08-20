@@ -48,7 +48,7 @@ public struct DocCMiddleware: AsyncMiddleware {
     }
     
     private func tryRespond(to request: Request, for archive: DocCArchive) async throws -> Response? {
-        // Remove percent encoding frmo our path.
+        // Remove percent encoding from our path.
         guard var path = request.url.path.removingPercentEncoding else {
             return nil
         }
@@ -59,6 +59,11 @@ public struct DocCMiddleware: AsyncMiddleware {
         // Only continue of our path matches the hosting base path for this archive.
         guard path == archive.hostingBasePath || path.hasPrefix("\(archive.hostingBasePath)/") else {
             return nil
+        }
+        
+        guard !archive.isStatic else {
+            #warning("Not exactly sure how a static DocC site needs to be served up, but I know it's not like this.")
+            return try await self.streamStaticFile(atPath: "index.html", for: archive, request: request)
         }
         
         // TODO: Evaluate with regex? This is broken, but close: ^[/]?[a-zA-Z]+[/]?(?:documentation|tutorials)?[/]?
