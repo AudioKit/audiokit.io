@@ -30,7 +30,7 @@ rm -rf $documentation_directory
 mkdir $documentation_directory
 
 # Run the docgen command.
-./docgen.sh $documentation_directory
+scripts/docgen.sh $documentation_directory
 
 # Finally, remove our temp directory and all cloned repositories.
 rm -rf $temp_directory

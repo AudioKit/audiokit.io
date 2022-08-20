@@ -1,14 +1,20 @@
 # AudioKit.io
 
-## Work In Progress
+## To Do
 
-There are a few caveats that I need to work through still:
+### Website
 
-- The DocC middleware I found is extremely outdated, but I haven't touched it yet. I just wanted to make sure the archive could serve first. Absolute worst case scenario, we can simply server the archives statically, so there's no concern here.
+- [x] Create Vapor boilerplate.
+- [x] Create system for generating `.doccarchive` across the AudioKit org. (see [AudioKitDocs](https://github.com/bdrelling/AudioKitDocs))
+- [ ] Add Leaf and Plot examples for the AudioKit team.
+- [ ] Migrate to AudioKit org and host!
 
-- The DocC middleware also doesn't resolve conflicts across multiple DocC archives. Again, worst case scenario, static archives will be just fine.
+### Middleware
 
-- In developing the `docgen` command and script, there is definitely opportunity to make the process even easier. I'm going to update the library a bit further so that we can nuke the `AudioKitDocs` repo, but being able to use the plugin to get things off the ground was very helpful.
+- [x] Create DocC Middleware for Vapor to serve up multiple `.doccarchive`s without collisions.
+- [ ] Fix the sidebar rendering.
+- [ ] Allow the Middleware to serve static `.doccarchive`s.
+- [ ] Clean up, optimize, and test the middleware, then break into a separate package.
 
 ## Running the Website
 
@@ -24,7 +30,7 @@ By default, documentation endpoints are disabled, as documentation is dynamicall
 
 If you want to enable documentation locally, just run the `scripts/docgen.sh` script, then re-run your website. This script generates documentation in the `Public/documentation` directory, which is gitignored.
 
-Currently by default documentation is served to `localhost:8080/documentation/AudioKit`.
+Currently by default documentation is served to `localhost:8080/<product>`, eg. (`localhost:8080/AudioKit` or `localhost:8080/PianoRoll`).
 
 ## Resources
 
