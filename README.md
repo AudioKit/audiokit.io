@@ -10,19 +10,19 @@ There are a few caveats that I need to work through still:
 
 - In developing the `docgen` command and script, there is definitely opportunity to make the process even easier. I'm going to update the library a bit further so that we can nuke the `AudioKitDocs` repo, but being able to use the plugin to get things off the ground was very helpful.
 
-## Installation
+## Running the Website
 
-The first thing we need to do is edit our schemes. Schemes are saved to the `.swiftpm` directory, but should not be committed to your repository, as it requires configuration specific to your local machine.
+The first and only thing we need to do is add a working directory to our schemes to enable file middleware:
 
-1. Add a working directory to the scheme.
 ![Configure your working directory.](/docs/configure_working_directory.png)
 
-2. Update your Launch Arguments for the scheme so that we pass `--env local` when running from Xcode.
-![Configure your launch arguments.](/docs/configure_launch_args.png)
+You can run the website by hitting **Run** in Xcode or via `swift run Run` in the terminal.
 
-## DocC Generation
+## Generating Documentation
 
-If you want to enable documentation endpoints, just run the `scripts/docgen.sh` script, then re-run your website. This script generates documentation in the `Public/documentation` directory, which is gitignored.
+By default, documentation endpoints are disabled, as documentation is dynamically generated on deployment.
+
+If you want to enable documentation locally, just run the `scripts/docgen.sh` script, then re-run your website. This script generates documentation in the `Public/documentation` directory, which is gitignored.
 
 Currently by default documentation is served to `localhost:8080/documentation/AudioKit`.
 
