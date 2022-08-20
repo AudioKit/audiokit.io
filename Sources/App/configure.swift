@@ -6,7 +6,7 @@ public func configure(_ app: Application) throws {
      app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     // get the AudioKit doccarchive path
-    let audioKitURL = URL(fileURLWithPath: "\(app.directory.publicDirectory)documentation/AudioKit.doccarchive")
+    let audioKitURL = URL(fileURLWithPath: "\(app.directory.publicDirectory)docs/AudioKit.doccarchive")
     
     // if our archive exists, enable the DocC middleware.
     if FileManager.default.fileExists(atPath: audioKitURL.path) {
