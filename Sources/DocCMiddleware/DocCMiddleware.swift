@@ -48,11 +48,12 @@ public struct DocCMiddleware: AsyncMiddleware {
     }
     
     private func tryRespond(to request: Request, for archive: DocCArchive) async throws -> Response? {
-        // Remove the leading "/", just to make comparisons simpler.
+        // Remove percent encoding frmo our path.
         guard var path = request.url.path.removingPercentEncoding else {
             return nil
         }
         
+        // Remove the leading "/", just to make comparisons simpler.
         path.removeFirst()
         
         // Only continue of our path matches the hosting base path for this archive.
@@ -71,6 +72,17 @@ public struct DocCMiddleware: AsyncMiddleware {
         } else if self.staticFileMatches(path: path, for: archive) {
             // The path matches a static file.
             return try await self.streamStaticFile(atPath: path, for: archive, request: request)
+        } else if path == "\(archive.hostingBasePath)/data/documentation.json" {
+            // The path matches the data.documentation.json within the .doccarchive.
+            // This may no longer be required, but is at least meant to safeguard against documentation archives generated in early versions of Xcode 13.
+            // If we find we don't really need this, we can rip it out.
+            if let response = try? await self.streamStaticFile(atPath: "data/documentation.json", for: archive, request: request) {
+                return response
+            } else if let response = try? await self.streamStaticFile(atPath: "data/documentation/\(archive.archiveName.lowercased()).json", for: archive, request: request) {
+                return response
+            } else {
+                throw Abort(.notFound)
+            }
         } else {
             // The path has no explicit matches, so it should be served to the index.html within the archive.
             return try await self.streamStaticFile(atPath: "index.html", for: archive, request: request)
