@@ -11,3 +11,7 @@ db.sqlite
 # Custom
 .vscode
 temp
+
+# We generate our DocC documentation on deploy with docgen.
+# As such, ensure this folder never gets checked in -- the archives are huge.
+Public/documentation
