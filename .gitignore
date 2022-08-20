@@ -10,6 +10,7 @@ db.sqlite
 
 # Custom
 .vscode
+.temp
 temp
 
 # We generate our DocC documentation on deploy with docgen.
