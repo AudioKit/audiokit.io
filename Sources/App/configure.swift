@@ -1,3 +1,4 @@
+import DocCMiddleware
 import Vapor
 
 // configures your application
@@ -5,13 +6,16 @@ public func configure(_ app: Application) throws {
     // serve files from /Public folder
      app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
-    // get the AudioKit doccarchive path
-    let audioKitURL = URL(fileURLWithPath: "\(app.directory.publicDirectory)docs/AudioKit.doccarchive")
+    #warning("Does this really need to be in Public/ though? seems not.")
+    let doccMiddleware = DocCMiddleware(
+        documentationDirectory: app.directory.publicDirectory.appending("docs"),
+        archives: [
+            "AudioKit",
+            "PianoRoll",
+        ]
+    )
     
-    // if our archive exists, enable the DocC middleware.
-    if FileManager.default.fileExists(atPath: audioKitURL.path) {
-        app.middleware.use(DocCMiddleware(archivePath: audioKitURL))
-    }
+    app.middleware.use(doccMiddleware)
 
     // register routes
     try routes(app)

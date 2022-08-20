@@ -6,7 +6,7 @@ import Vapor
 /// because the source package includeds website modules as well, which we don't want._
 ///
 /// Source: [JosephDuffy/VaporDocC](https://github.com/JosephDuffy/VaporDocC)
-public struct DocCMiddleware: AsyncMiddleware {
+public struct DuffyDocCMiddleware: AsyncMiddleware {
     /// The path to the DocC archive.
     public let archivePath: URL
 
