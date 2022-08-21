@@ -3,15 +3,14 @@ import Vapor
 
 // configures your application
 public func configure(_ app: Application) throws {
-    // serve files from /Public folder
-     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+    // uncomment to serve files from /Public folder
+    // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
-    #warning("Does this really need to be in Public/ though? seems not.")
     let doccMiddleware = DocCMiddleware(
         documentationDirectory: app.directory.publicDirectory.appending("docs"),
         archives: [
-            "AudioKit",
-            "PianoRoll",
+            .init(name: "AudioKit", hostingBasePath: "AudioKit"),
+            .init(name: "PianoRoll", hostingBasePath: "PianoRoll"),
         ]
     )
     

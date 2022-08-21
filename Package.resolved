@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "doccmiddleware",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bdrelling/DocCMiddleware",
+      "state" : {
+        "revision" : "a76338a8cdefa689c974490a43f53d3e55e794cc",
+        "version" : "0.0.1"
+      }
+    },
+    {
       "identity" : "multipart-kit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/multipart-kit.git",
