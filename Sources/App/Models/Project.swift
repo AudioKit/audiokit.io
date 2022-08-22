@@ -26,7 +26,8 @@ struct Project {
 
 // MARK: - Extensions
 
-// TODO: This would be easy to automate with the GitHub API. For now, we'll keep it static.
+// TODO: This would be easy enough to automate with the GitHub API.
+// TODO: This list could benefit from some safety around which .doccarchive files actually exist on the system.
 extension Project: CaseIterable {
     static var allCases: [Self] = [
         .init(
