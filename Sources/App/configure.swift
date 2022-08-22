@@ -1,5 +1,4 @@
 import DocCMiddleware
-import Leaf
 import Vapor
 
 // Configures our application.
