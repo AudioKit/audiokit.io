@@ -1,0 +1,133 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@def300;400;500;600;700;800&display=swap');
+
+/* Variables */
+
+:root {
+    /* Colors */
+    --accent-color: #63d2ff;
+    --primary-background-color: #3d3d3d;
+    --primary-text-color: #fff;
+    --secondary-text-color: #ccc;
+    /* Fonts */
+    --primary-font-family: "Open Sans", sans-serif;
+}
+
+/* Selection */
+
+::selection {
+    color: var(--primary-text-color);
+    background-color: var(--accent-color);
+}
+
+/* HTML, Body, and Container */
+
+html {
+    background-color: var(--primary-background-color);
+}
+
+body {
+    color: var(--primary-text-color);
+    font-family: var(--primary-font-family);
+}
+
+@media screen and (min-width: 1024px) {
+    body > .container {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    body > .container {
+        margin: 0 3rem;
+    }
+}
+
+/* Links */
+
+a {
+    color: var(--primary-text-color);
+    border-bottom: .2rem solid var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--accent-color);
+}
+
+a.image, a.icon {
+    border-bottom: none;
+}
+
+a.image:hover, a.icon:hover {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+/* Section */
+
+section {
+    margin: 0 1.5rem 4.5rem;
+}
+
+/* Footer */
+
+footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+/* Home Page Styles */
+
+.logo {
+    background: purple;
+    max-width: 400px;
+    margin: 3rem 0;
+}
+
+.intro {
+    text-align: center;
+}
+
+.project-feed {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .project-feed {
+        gap: 3rem;
+    }
+    
+    .project-feed > .project {
+        flex-grow: 1;
+        /* 33% minus the .project-feed gap attribute */
+        flex-basis: calc(100% / 3 - 3rem);
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .project-feed {
+        gap: 3rem;
+    }
+    
+    .project-feed > .project {
+        flex-grow: 1;
+        /* 50% minus the .project-feed gap attribute */
+        flex-basis: calc(50% - 3rem);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .project-feed > .project {
+        flex-grow: 1;
+        /* 50% minus the .project-feed gap attribute */
+        flex-basis: 100%;
+    }
+}

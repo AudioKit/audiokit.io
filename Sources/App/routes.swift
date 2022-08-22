@@ -1,11 +1,9 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        "It works!"
-    }
-
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
+    // Registers a controller at the root of the site.
+    try app.routes.register(collection: HomeController())
+    
+    // Register controllers on subpaths.
+    try app.routes.grouped("status").register(collection: StatusController())
 }

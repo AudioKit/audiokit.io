@@ -7,9 +7,11 @@ let package = Package(
        .macOS(.v12)
     ],
     dependencies: [
-        // 💧 Vapor
-        .package(url: "https://github.com/vapor/vapor", from: "4.63.0"),
-        .package(url: "https://github.com/bdrelling/DocCMiddleware", from: "0.0.1"),
+        .package(url: "https://github.com/bdrelling/DocCMiddleware", .upToNextMinor(from: "0.0.1")),
+        .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
+        .package(url: "https://github.com/JohnSundell/Plot", .upToNextMinor(from: "0.11.0")),
+        .package(url: "https://github.com/vapor/leaf", from: "4.2.1"),
+        .package(url: "https://github.com/vapor/vapor", from: "4.65.1"),
     ],
     targets: [
         // 💧 Vapor
@@ -23,8 +25,11 @@ let package = Package(
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor"),
                 .product(name: "DocCMiddleware", package: "DocCMiddleware"),
+                .product(name: "Leaf", package: "leaf"),
+                .product(name: "Plot", package: "Plot"),
+                .product(name: "PlotVapor", package: "PlotVapor"),
+                .product(name: "Vapor", package: "vapor"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

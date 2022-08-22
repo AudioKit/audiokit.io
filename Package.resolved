@@ -37,12 +37,48 @@
       }
     },
     {
+      "identity" : "leaf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/leaf",
+      "state" : {
+        "revision" : "04f262edbee143cdfefc5b26cef704913712e16c",
+        "version" : "4.2.1"
+      }
+    },
+    {
+      "identity" : "leaf-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/leaf-kit.git",
+      "state" : {
+        "revision" : "c67a1b06561bfb8a427ed7e50e27792e083f2d3e",
+        "version" : "1.8.0"
+      }
+    },
+    {
       "identity" : "multipart-kit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/multipart-kit.git",
       "state" : {
         "revision" : "0d55c35e788451ee27222783c7d363cb88092fab",
         "version" : "4.5.2"
+      }
+    },
+    {
+      "identity" : "plot",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/Plot",
+      "state" : {
+        "revision" : "b358860fe565eb53e98b1f5807eb5939c8124547",
+        "version" : "0.11.0"
+      }
+    },
+    {
+      "identity" : "plotvapor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bdrelling/PlotVapor",
+      "state" : {
+        "revision" : "f87f3a59cb876d52cfa8edb17973b52264a40c73",
+        "version" : "0.3.4"
       }
     },
     {
