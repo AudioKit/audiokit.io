@@ -17,8 +17,8 @@ mkdir $temp_directory
 cd $temp_directory
 
 # Clone the repository, then step into it.
-git clone https://github.com/bdrelling/AudioKitDocs
-cd AudioKitDocs
+git clone https://github.com/AudioKit/docgen
+cd docgen
 
 # Define our documentation directory.
 # This corresponds to Vapor's public file directory.
