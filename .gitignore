@@ -13,7 +13,7 @@ db.sqlite
 .temp
 temp
 
-# We generate our DocC documentation on deploy with docgen.
-# As such, ensure these folders never gets checked in -- the archives are huge.
-Public/docs
-Public/documentation
+# Documentation
+.doccarchive
+Docs/**
+!Docs/Package.swift

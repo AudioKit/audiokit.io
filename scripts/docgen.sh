@@ -1,36 +1,45 @@
 #!/bin/bash
 
-# Define our working directory.
-working_directory=$(pwd)
+# Sources:
+#   - https://github.com/apple/swift-docc-plugin
+#   - https://apple.github.io/swift-docc-plugin/documentation/swiftdoccplugin/
+#   - https://apple.github.io/swift-docc-plugin/documentation/swiftdoccplugin/generating-documentation-for-hosting-online
+#   - https://www.swift.org/documentation/docc/
+#   - https://www.swift.org/documentation/docc/distributing-documentation-to-other-developers
 
-# Define our products to generate documentation for.
-# products='AudioKit PianoRoll'
+# Define the documentation directory.
+# This should be the directory where the Package.swift lives for generating DocC documentation.
+documentation_directory="$(pwd)/Docs"
 
-# Define our temporary directory for cloning repositories, which ensures proper cleanup.
-temp_directory="${working_directory}/.temp"
+# Define the output directory.
+# The output directory should be relative to the documentation directory,
+# and it must be a directory that already exists.
+# If no output directory is defined, use the documentation directory.
+output_directory=${1-$documentation_directory}
 
-# If our command failed previously, we may need to delete the temporary directory.
-rm -rf $temp_directory
+# Step into documentation directory.
+cd $documentation_directory
 
-# Create the temporary directory if it does not already exist, then step into it.
-mkdir $temp_directory
-cd $temp_directory
+# Define a function for generating a .doccarchive.
+generate_archive() {
+    product=$1
 
-# Clone the repository, then step into it.
-git clone https://github.com/AudioKit/docgen
-cd docgen
+    echo "Generating archive for ${product} in ${output_directory}..."
 
-# Define our documentation directory.
-# This corresponds to Vapor's public file directory.
-documentation_directory="${working_directory}/Public/docs"
+    swift package --allow-writing-to-directory $output_directory \
+        generate-documentation \
+        --product $product \
+        --hosting-base-path $product \
+        --output-path "${output_directory}/${product}.doccarchive"
 
-# Delete our documentation directory and recreate it.
-# This ensure stale documentation won't carry-over, such as in the event of an error.
-rm -rf $documentation_directory
-mkdir $documentation_directory
+    # TODO: Once we can confirm the above is working, try enabling the following flags:
+    # --disable-indexing # apparently only necessary for IDE documentation navigation
+}
 
-# Run the docgen command.
-scripts/docgen.sh $documentation_directory
-
-# Finally, remove our temp directory and all cloned repositories.
-rm -rf $temp_directory
+# Add new entries for every product here.
+# Note that this will only work with PRODUCTS within your dependency graph,
+# if you need to work with targets, you'll have to update this script.
+generate_archive AudioKit
+generate_archive Keyboard
+generate_archive PianoRoll
+generate_archive Tonic

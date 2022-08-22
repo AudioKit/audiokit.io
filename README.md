@@ -26,9 +26,9 @@ You can run the website by hitting **Run** in Xcode or via `swift run Run` in th
 
 ## Generating Documentation
 
-By default, documentation endpoints are disabled, as documentation is dynamically generated on deployment.
+By default, documentation endpoints are disabled, as documentation is dynamically generated. This allows us to avoid keeping numerous ~6-12mb files in our repository.
 
-If you want to enable documentation locally, just run the `scripts/docgen.sh` script, then re-run your website. This script generates documentation in the `Public/documentation` directory, which is gitignored.
+If you want to enable documentation locally, just run the `scripts/docgen.sh` script _before_ running your website. This script generates documentation in the `Docs` directory, and all `.doccarchive` files are gitignored.
 
 Currently by default documentation is served to `localhost:8080/<product>`, eg. (`localhost:8080/AudioKit` or `localhost:8080/PianoRoll`).
 
