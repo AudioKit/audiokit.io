@@ -13,9 +13,7 @@ You can run the website by hitting **Run** in Xcode or via `swift run Run` in th
 ## Adding Documentation
 
 1. Follow the instructions in [`audiokit/docgen`](https://github.com/audiokit/docgen#adding-new-documentation). Make sure your changes are committed and pushed.
-
 2. Run `scripts/docgen.sh` in _this_ repository.
-
 3. Commit and push your changes.
 
 The site will automatically re-deploy to both `development` and `production` environments.
