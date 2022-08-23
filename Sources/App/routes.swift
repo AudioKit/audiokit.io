@@ -7,7 +7,6 @@ func routes(_ app: Application) throws {
     // Register controllers on subpaths.
     try app.routes.grouped("status").register(collection: StatusController())
     
-    
     app.get("**") { req -> View in
         if let errorPage = ErrorPage(.notFound) {
             return try await req.plot.render(errorPage)

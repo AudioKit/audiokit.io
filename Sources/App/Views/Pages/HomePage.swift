@@ -6,11 +6,15 @@ struct HomePage: TemplatedPage {
     let title = "Home"
 
     var content: Component {
-        Div {
-            Intro()
-            ProjectFeed()
-            Footer()
+        ComponentGroup {
+            Div {
+                Intro()
+                
+                ProjectFeed()
+                
+                Footer()
+            }
+            .class("container")
         }
-        .class("container")
     }
 }
