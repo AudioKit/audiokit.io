@@ -12,8 +12,3 @@ db.sqlite
 .vscode
 .temp
 temp
-
-# Documentation
-.doccarchive
-Docs/**
-!Docs/Package.swift
