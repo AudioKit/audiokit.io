@@ -131,3 +131,9 @@ footer {
         flex-basis: 100%;
     }
 }
+
+/* Error Page Styles */
+
+.error {
+    text-align: center;
+}
