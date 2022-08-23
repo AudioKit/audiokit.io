@@ -6,7 +6,6 @@ FROM swift:5.6-focal as build
 # Install OS updates and, if needed, sqlite3
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q update \
-    && apt-get -q install git \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up a build area
@@ -14,9 +13,6 @@ WORKDIR /build
 
 # Copy entire repo into container
 COPY . .
-
-# Run the docgen script to generate our documentation.
-RUN /build/scripts/docgen.sh
 
 # Build everything, with optimizations
 RUN swift build -c release --static-swift-stdlib
