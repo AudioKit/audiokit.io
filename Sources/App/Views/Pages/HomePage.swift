@@ -9,9 +9,7 @@ struct HomePage: TemplatedPage {
         ComponentGroup {
             Div {
                 Intro()
-                
                 ProjectFeed()
-                
                 Footer()
             }
             .class("container")
