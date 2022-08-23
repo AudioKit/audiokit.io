@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/DocCMiddleware",
       "state" : {
-        "revision" : "a76338a8cdefa689c974490a43f53d3e55e794cc",
-        "version" : "0.0.1"
+        "revision" : "a98562ae2125b81d4c7f5b2dcd9f87949c74f330",
+        "version" : "0.0.2"
       }
     },
     {

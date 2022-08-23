@@ -19,7 +19,7 @@ cd docgen
 
 # Define our documentation directory.
 # This corresponds to Vapor's public file directory.
-documentation_directory="${working_directory}/Public/docs"
+documentation_directory="${working_directory}/Docs"
 
 # Delete our documentation directory and recreate it.
 # This ensure stale documentation won't carry-over, such as in the event of an error.

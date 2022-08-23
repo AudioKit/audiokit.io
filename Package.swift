@@ -7,7 +7,7 @@ let package = Package(
        .macOS(.v12)
     ],
     dependencies: [
-        .package(url: "https://github.com/bdrelling/DocCMiddleware", .upToNextMinor(from: "0.0.1")),
+        .package(url: "https://github.com/bdrelling/DocCMiddleware", .upToNextMinor(from: "0.0.2")),
         .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
         .package(url: "https://github.com/JohnSundell/Plot", .upToNextMinor(from: "0.11.0")),
         .package(url: "https://github.com/vapor/vapor", from: "4.65.1"),
