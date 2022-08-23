@@ -5,5 +5,6 @@ build:
 run:
   release:
     image: worker
-    command: ./scripts/docgen.sh
+    command:
+      - ./scripts/docgen.sh
   web: Run serve --environment $ENVIRONMENT --hostname 0.0.0.0 --port $PORT
