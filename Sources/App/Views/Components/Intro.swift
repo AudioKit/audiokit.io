@@ -14,7 +14,7 @@ struct Intro: Component {
                 Span(".")
             }
             
-            Link("Sponsor", url: "https://github.com/sponsors/aure")
+            Link("Sponsor", url: "https://github.com/sponsors/AudioKit")
                 .class("github-button")
                 .data(named: "icon", value: "octicon-heart")
                 .data(named: "size", value: "large")
