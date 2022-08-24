@@ -13,10 +13,11 @@ struct Intro: Component {
                     .class("name")
                 Span(".")
             }
-
-            Paragraph {
-                Text("Your source for AudioKit documentation.")
-            }
+            
+            Link("Sponsor", url: "https://github.com/sponsors/aure")
+                .class("github-button")
+                .data(named: "icon", value: "octicon-heart")
+                .data(named: "size", value: "large")
         }
         .class("intro")
     }

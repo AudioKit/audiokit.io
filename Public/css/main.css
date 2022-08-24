@@ -99,6 +99,9 @@ footer {
     flex-wrap: wrap;
 }
 
+.project-feed .github-buttons {
+    margin: 0.5rem 0;
+}
 
 @media screen and (min-width: 1024px) {
     .project-feed {

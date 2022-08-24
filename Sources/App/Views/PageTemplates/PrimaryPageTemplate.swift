@@ -27,7 +27,12 @@ struct PrimaryPageTemplate: PageTemplate {
     /// For all other elements on the site, we use `Component`.
     public static func body(with page: Page) -> Node<HTML.DocumentContext> {
         .body(
-            .component(page.content)
+            .component(page.content),
+            .script(
+                .attribute(named: "async"),
+                .attribute(named: "defer"),
+                .src("https://buttons.github.io/buttons.js")
+            )
         )
     }
 }
