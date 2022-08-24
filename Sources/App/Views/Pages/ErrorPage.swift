@@ -41,7 +41,7 @@ struct ErrorPage: TemplatedPage {
         switch status {
         case .notFound:
             self.title = "Page Not Found"
-            self.message = "The page you're looking for can't be found."
+            self.message = "The AudioKit web site is in the middle of a great overhaul, so things may have moved around a bit, but there's a lot of great stuff on this server, and more to come."
         default:
             return nil
         }
