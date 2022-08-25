@@ -35,8 +35,16 @@ extension Project: CaseIterable {
             description: "Swift audio synthesis, processing, & analysis platform for iOS, macOS and tvOS"
         ),
         .init(
+            name: "SoundpipeAudioKit",
+            description: "Oscillators, effects, filters, reverbs and more"
+        ),
+        .init(
+            name: "STKAudioKit",
+            description: "Physical models of musical instruments"
+        ),
+        .init(
             name: "PianoRoll",
-            description: "Touch oriented piano roll for iOS and macOS"
+            description: "Touch-oriented piano roll for iOS and macOS"
         ),
         .init(
             name: "Tonic",
