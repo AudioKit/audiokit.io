@@ -6,7 +6,7 @@ struct ProjectFeed: Component {
         Section {
             for project in Project.allCases {
                 Div {
-                    H3(project.name)
+                    H3(Link(project.name, url: project.gitHubURL))
                     Paragraph(project.description)
                     
                     

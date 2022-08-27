@@ -35,24 +35,36 @@ extension Project: CaseIterable {
             description: "Swift audio synthesis, processing, & analysis platform for iOS, macOS and tvOS"
         ),
         .init(
-            name: "SoundpipeAudioKit",
-            description: "Oscillators, effects, filters, reverbs and more"
+            name: "DunneAudioKit",
+            description: "Sampler instrument and Chorus, Flanger and Stereo Delay Effects"
         ),
         .init(
-            name: "STKAudioKit",
-            description: "Physical models of musical instruments"
+            name: "Keyboard",
+            description: "SwiftUI music keyboard"
+        ),
+        .init(
+            name: "Microtonality",
+            description: "Microtonal Tuning Tables"
         ),
         .init(
             name: "PianoRoll",
             description: "Touch-oriented piano roll for iOS and macOS"
         ),
         .init(
-            name: "Tonic",
-            description: "Swift library for music theory"
+            name: "SoundpipeAudioKit",
+            description: "Oscillators, effects, filters, reverbs and more"
         ),
         .init(
-            name: "Keyboard",
-            description: "SwiftUI music keyboard"
+            name: "SporthAudioKit",
+            description: "AudioKit Operations (Sporth) extension"
+        ),
+        .init(
+            name: "STKAudioKit",
+            description: "Physical models of musical instruments"
+        ),
+        .init(
+            name: "Tonic",
+            description: "Swift library for music theory"
         ),
     ]
 }
