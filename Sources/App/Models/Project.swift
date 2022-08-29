@@ -35,6 +35,18 @@ extension Project: CaseIterable {
             description: "Swift audio synthesis, processing, & analysis platform for iOS, macOS and tvOS"
         ),
         .init(
+            name: "AudioKitEX",
+            description: "C-backed AudioKit DSP"
+        ),
+        .init(
+            name: "AudioKitUI",
+            description: "Controls and Visualization for AudioKit apps"
+        ),
+        .init(
+            name: "DevoloopAudioKit",
+            description: "Sampler instrument and Chorus, Flanger and Stereo Delay Effects"
+        ),
+        .init(
             name: "DunneAudioKit",
             description: "Sampler instrument and Chorus, Flanger and Stereo Delay Effects"
         ),
