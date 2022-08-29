@@ -44,7 +44,7 @@ extension Project: CaseIterable {
         ),
         .init(
             name: "DevoloopAudioKit",
-            description: "Sampler instrument and Chorus, Flanger and Stereo Delay Effects"
+            description: "Guitar amp sim and tube emulation"
         ),
         .init(
             name: "DunneAudioKit",
