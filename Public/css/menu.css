@@ -2,14 +2,15 @@
 {
     /*You can decorate the menu's container, such as adding background images through this block*/
     background-color: #2a2a2a;
-    height: 38px;
-    padding: 15px;
     border-radius: 6px;
     box-sizing: content-box;
+    padding: 15px;
+    text-align: center;
 }
 #sses2
 {
-    margin:0 auto;/*This will make the menu center-aligned. Removing this line will make the menu align left.*/
+    display: inline-block;
+    margin: 0 auto;/*This will make the menu center-aligned. Removing this line will make the menu align left.*/
 }
 #sses2 ul 
 { 

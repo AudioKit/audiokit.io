@@ -9,7 +9,6 @@ var sse2 = function () {
             var m = document.getElementById('sses2');
             if (!m) return;
             var ul = m.getElementsByTagName("ul")[0];
-            m.style.width = ul.offsetWidth + 1 + "px";
             var items = m.getElementsByTagName("li");
             var a = m.getElementsByTagName("a");
 
