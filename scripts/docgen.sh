@@ -29,12 +29,8 @@ mkdir $documentation_directory
 # Run the docgen command.
 scripts/generate.sh $documentation_directory
 
-mv "${documentation_directory}/docs.zip"
-
 # Finally, remove our temp directory and all cloned repositories.
 rm -rf $temp_directory
 
 cd $working_directory
 scripts/menu.sh
-
- 
