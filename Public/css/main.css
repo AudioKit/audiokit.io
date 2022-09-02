@@ -47,22 +47,22 @@ body {
 
 /* Links */
 
-a {
+.project-feed a, footer a {
     color: var(--primary-text-color);
     border-bottom: .2rem solid var(--accent-color);
     font-weight: 600;
     text-decoration: none;
 }
 
-a:hover {
+.project-feed a:hover {
     background-color: var(--accent-color);
 }
 
-a.image, a.icon {
+.project-feed a.image, a.icon {
     border-bottom: none;
 }
 
-a.image:hover, a.icon:hover {
+.project-feed a.image:hover, a.icon:hover {
     background-color: transparent;
     border-bottom: none;
 }

@@ -7,6 +7,7 @@ struct HomePage: TemplatedPage {
 
     var content: Component {
         ComponentGroup {
+            Script(path: "/js/insertmenu.js")
             Div {
                 Intro()
                 ProjectFeed()

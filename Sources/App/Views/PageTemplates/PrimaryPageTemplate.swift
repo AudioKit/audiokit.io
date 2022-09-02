@@ -17,6 +17,8 @@ struct PrimaryPageTemplate: PageTemplate {
                 .content("#63d2ff")
             ),
             .stylesheet("/css/main.css"),
+            .stylesheet("/css/menu.css"),
+            .script(.src("/js/menu.js")),
             .title("\(page.title) - \(self.title)"),
             .favicon("/images/favicon.png")
         )
