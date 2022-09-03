@@ -59,6 +59,10 @@ extension Project: CaseIterable {
             description: "Microtonal Tuning Tables"
         ),
         .init(
+            name: "NodeEditor",
+            description: "Generic node graph editor"
+        ),
+        .init(
             name: "PianoRoll",
             description: "Touch-oriented piano roll for iOS and macOS"
         ),
