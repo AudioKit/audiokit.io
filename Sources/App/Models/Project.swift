@@ -51,16 +51,16 @@ extension Project: CaseIterable {
             description: "Sampler instrument and Chorus, Flanger and Stereo Delay Effects"
         ),
         .init(
+            name: "Flow",
+            description: "Generic node graph editor"
+        ),
+        .init(
             name: "Keyboard",
             description: "SwiftUI music keyboard"
         ),
         .init(
             name: "Microtonality",
             description: "Microtonal Tuning Tables"
-        ),
-        .init(
-            name: "NodeEditor",
-            description: "Generic node graph editor"
         ),
         .init(
             name: "PianoRoll",
