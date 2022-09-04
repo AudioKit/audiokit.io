@@ -1,5 +1,8 @@
 # AudioKit.io
 
+[![CI Status](https://github.com/AudioKit/audiokit.io/actions/workflows/tests.yml/badge.svg)](https://github.com/AudioKit/audiokit.io/actions/workflows/tests.yml)
+[![License](https://img.shields.io/github/license/AudioKit/audiokit.io)](https://github.com/AudioKit/audiokit.io/blob/main/LICENSE)
+
 [**audiokit.io**](https://audiokit.io) hosts DocC documentation for all AudioKit packages.
 
 ## Running the Website

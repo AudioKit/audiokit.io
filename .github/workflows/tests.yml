@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  swift_build:
+    name: Build
+    uses: AudioKit/ci/.github/workflows/swift_test.yml@main
+    with:
+      scheme: AudioKitWebsite
+      platforms: macOS Linux
+      subcommand: build
+
+  # Send notification to Discord on failure.
+  send_notification:
+    name: Send Notification
+    uses: AudioKit/ci/.github/workflows/send_notification.yml@main
+    needs: [swift_build]
+    if: ${{ failure() && github.ref == 'refs/heads/main' }}
+    secrets: inherit
