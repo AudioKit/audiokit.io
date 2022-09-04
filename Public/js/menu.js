@@ -2,7 +2,7 @@
 *  Please keep this notice intact. Thank you. */
 
 var sse2 = function () {
-    var rebound = 20; //set it to 0 if rebound effect is not prefered
+    var rebound = 0; //set it to 0 if rebound effect is not prefered
     var slip, k;
     return {
         buildMenu: function () {
@@ -113,11 +113,11 @@ var sse2 = function () {
         changePosition: function (target, direction) {
             if (direction == 1) {
                 //following +1 will fix the IE8 bug of x+1=x, we force it to x+2
-                slip.style.left = slip.offsetLeft + Math.ceil(Math.abs(target.offsetLeft - slip.offsetLeft + rebound) / 10) + 1 + "px";
+                slip.style.left = slip.offsetLeft + Math.ceil(Math.abs(target.offsetLeft - slip.offsetLeft + rebound) / 10) + 2 + "px";
             }
             else {
                 //following -1 will fix the Opera bug of x-1=x, we force it to x-2
-                slip.style.left = slip.offsetLeft - Math.ceil(Math.abs(slip.offsetLeft - target.offsetLeft + rebound) / 10) - 1 + "px";
+                slip.style.left = slip.offsetLeft - Math.ceil(Math.abs(slip.offsetLeft - target.offsetLeft + rebound) / 10) - 2 + "px";
             }
         },
         changeWidth: function (target) {
