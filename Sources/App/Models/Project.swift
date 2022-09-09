@@ -43,6 +43,10 @@ extension Project: CaseIterable {
             description: "Controls and Visualization for AudioKit apps"
         ),
         .init(
+            name: "Controls",
+            description: "SwiftUI Knobs, Sliders, X-Y Pads, and more"
+        ),
+        .init(
             name: "DevoloopAudioKit",
             description: "Guitar amp sim and tube emulation"
         ),
