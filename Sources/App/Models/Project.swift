@@ -86,5 +86,9 @@ extension Project: CaseIterable {
             name: "Tonic",
             description: "Swift library for music theory"
         ),
+        .init(
+            name: "Waveform",
+            description: "GPU accelerated SwiftUI waveform view"
+        ),
     ]
 }

@@ -8,6 +8,7 @@ document.write('<div id="sse2">\
         <li><a href="/Keyboard">Keyboard</a></li>\
         <li><a href="/PianoRoll">Piano Roll</a></li>\
         <li><a href="/Tonic">Tonic</a></li>\
+        <li><a href="/Waveform">Waveform</a></li>\
         <li><a href="/">...More</a></li>\
     </ul>\
 </div>\
